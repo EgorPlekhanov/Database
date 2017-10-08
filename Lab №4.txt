@@ -11,18 +11,18 @@ CREATE TABLE T_Contact(
     FOREIGN KEY (ID_CATERER) REFERENCES T_CATERER(ID_CATERER) 
       ON DELETE CASCADE);
 INSERT INTO T_CONTACT (ID_CONTACT, ID_CATERER, NAME, SURNAME, FATHER_NAME, TELEPHON)
-  VALUES (1, 1, 'Имя1', 'Фамилия1', 'Отчество1', '89223335604');
+  VALUES (1, 1, 'РРјСЏ1', 'Р¤Р°РјРёР»РёСЏ1', 'РћС‚С‡РµСЃС‚РІРѕ1', '89223335604');
 INSERT INTO T_CONTACT (ID_CONTACT, ID_CATERER, NAME, SURNAME, FATHER_NAME, TELEPHON)
-  VALUES (2, 2, 'Имя2', 'Фамилия2', 'Отчество2', '89223335601');
+  VALUES (2, 2, 'РРјСЏ2', 'Р¤Р°РјРёР»РёСЏ2', 'РћС‚С‡РµСЃС‚РІРѕ2', '89223335601');
 INSERT INTO T_CONTACT (ID_CONTACT, ID_CATERER, NAME, SURNAME, FATHER_NAME, TELEPHON)
-  VALUES (3, 3, 'Имя3', 'Фамилия3', 'Отчество3', '89223335670');
+  VALUES (3, 3, 'РРјСЏ3', 'Р¤Р°РјРёР»РёСЏ3', 'РћС‚С‡РµСЃС‚РІРѕ3', '89223335670');
 INSERT INTO T_CONTACT (ID_CONTACT, ID_CATERER, NAME, SURNAME, FATHER_NAME, TELEPHON)
-  VALUES (4, 3, 'Имя4', 'Фамилия4', 'Отчество4', '89223333536');
+  VALUES (4, 3, 'РРјСЏ4', 'Р¤Р°РјРёР»РёСЏ4', 'РћС‚С‡РµСЃС‚РІРѕ4', '89223333536');
 INSERT INTO T_CONTACT (ID_CONTACT, ID_CATERER, NAME, SURNAME, FATHER_NAME, TELEPHON)
-  VALUES (5, 5, 'Имя5', 'Фамилия5', 'Отчество5', '89223331234');
+  VALUES (5, 5, 'РРјСЏ5', 'Р¤Р°РјРёР»РёСЏ5', 'РћС‚С‡РµСЃС‚РІРѕ5', '89223331234');
 SELECT NAME, SURNAME, FATHER_NAME, TELEPHON FROM T_CONTACT;
 ===============================================================
-   *** ЗАДАНИЕ №48 ***
+   *** Р—РђР”РђРќРР• в„–48 ***
 ===============================================================
 CREATE VIEW V_CATERER 
   (ID_CATERER, CATERER_NAME, CONTACT_NAME, CONTACT_SURNAME)
@@ -36,7 +36,7 @@ SELECT * FROM V_CATERER;
 INSERT INTO V_CATERER 
   (ID_CATERER, CATERER_NAME, CONTACT_NAME, CONTACT_SURNAME)
   VALUES
-  (6, 'Поставщик№4', 'Имя№6', 'Фамилия№6');
+  (6, 'РџРѕСЃС‚Р°РІС‰РёРєв„–4', 'РРјСЏв„–6', 'Р¤Р°РјРёР»РёСЏв„–6');
 
 DELETE FROM V_CATERER
   WHERE ID_CATERER = 2;
@@ -45,7 +45,7 @@ UPDATE V_CATERER
   SET CONTACT_NAME = 'Ivan'
     WHERE ID_CATERER = 1;
 ===============================================================
-   *** ЗАДАНИЕ №49 ***
+   *** Р—РђР”РђРќРР• в„–49 ***
 ===============================================================
 CREATE VIEW V_SURPLUS
   (MATERIAL, STORE, VOLUME)
@@ -55,7 +55,7 @@ AS
     JOIN T_STORE ON T_SURPLUS.ID_STORE = T_STORE.ID_STORE
   GROUP BY T_MATERIAL.NAME, T_STORE.NAME;
 ===============================================================
-   *** ЗАДАНИЕ №50 ***
+   *** Р—РђР”РђРќРР• в„–50 ***
 ===============================================================
 CREATE VIEW V_SUPPLY
   (CATERER_NAME, MATERIAL, MESSURE, SUPPLY_DATE, PRICE, VOLUME, SUMM)
@@ -68,7 +68,7 @@ AS
   JOIN T_MESSURE ON T_MATERIAL.ID_MESSURE = T_MESSURE.ID_MESSURE
   JOIN T_INPRICE ON T_MATERIAL.ID_MATERIAL = T_INPRICE.ID_MATERIAL;
 ===============================================================
-   *** ЗАДАНИЕ №51 ***
+   *** Р—РђР”РђРќРР• в„–51 ***
 ===============================================================
 CREATE VIEW V_STORE
   (STORE, MATERIAL, MESSURE, SUMM)
@@ -82,7 +82,7 @@ AS
           DELIVER_DATE <= '31.12.2017'
   GROUP BY T_STORE.NAME, T_MATERIAL.NAME, T_MESSURE.NAME;
 ===============================================================
-   *** ЗАДАНИЕ №52 ***
+   *** Р—РђР”РђРќРР• в„–52 ***
 ===============================================================
 CREATE VIEW V_SUPPLY_PRICE
   (ID, MATERIAL, VOLUME, STORE, PRICE, SUMM)
